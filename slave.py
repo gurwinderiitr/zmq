@@ -13,6 +13,7 @@ context = zmq.Context()
 socket = context.socket(zmq.SUB)
 print "Collecting updates from server..."
 socket.connect ("tcp://"+system_ip+":%s" % port)
+# This acts as a filter for upcoming calls on the port
 topicfilter = sys.argv[1]
 print ("filter:",topicfilter)
 socket.setsockopt(zmq.SUBSCRIBE, topicfilter)
