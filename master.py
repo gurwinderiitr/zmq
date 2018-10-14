@@ -17,6 +17,7 @@ socket.connect("tcp://"+system_ip+":%s" % port)
 port = "5660"
 # Socket to talk to server
 context_results = zmq.Context()
+# This will be used to store results returned from the Slave
 socket_results = context_results.socket(zmq.SUB)
 print "Collecting updates from server..."
 socket_results.connect ("tcp://"+system_ip+":%s" % port)
