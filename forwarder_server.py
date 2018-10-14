@@ -5,6 +5,7 @@ import time
 
 port = "5559"
 context = zmq.Context()
+# Socket to keep the connection alive
 socket = context.socket(zmq.PUB)
 socket.connect("tcp://localhost:%s" % port)
 publisher_id = random.randrange(0,9999)
